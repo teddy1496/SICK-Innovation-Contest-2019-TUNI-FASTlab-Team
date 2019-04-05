@@ -1,7 +1,7 @@
 # SICK Innovation Contest 2019 - TUNI FASTlab Team
 # RINNETUTKA
 
-Application developed for the SICK Innovation Contest 2019 at Tamper University, Finland.
+Application developed for the SICK Innovation Contest 2019 by FASTlab Team at Tamper University, Finland.
 
 ## Getting Started
 
