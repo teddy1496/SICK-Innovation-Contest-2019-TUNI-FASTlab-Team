@@ -65,27 +65,31 @@ the [SICKAG GIT Repository](https://github.com/SICKAG/sick_scan) for this Sensor
 
 * Launch Transform file
 ```
-	 roslaunch sensor_transform.launch
+roslaunch sensor_transform.launch
 ```
 
 * To start the scanner with a specific IP address
 ```
-	roslaunch sick_scan sick_mrs_6xxx.launch hostname:=<ip-address>
+roslaunch sick_scan sick_mrs_6xxx.launch hostname:=<ip-address>
 ```
 
 * To start the server
 ```
-	 python server_BE.py
-  ```
-
-* Open the web-browser 
- ``
-  localhost
+python server_BE.py
 ```
- 
+The Server is configured to run on **IP:"192.168.1.222" and Port:"5555"**. 
+* You can either configure your host address on the laptop to be "192.168.1.222" **OR**
+* You can set the host address on your machine and change line 186 on the file [server_BE.py](https://github.com/teddy1496/SICK-Innovation-Contest-2019-TUNI-FASTlab-Team/blob/master/Server/server_BE.py).
 
-
- 
+After this configuration open your browser and in the search bar type:
+```
+<server-ip-address>:<port-number>
+``` 
+You will have an interface where you can select the area to visualize by selecting the points on the point-cloud using the sliding bars.
+The Web Interface has 2 different pages, both pages provides you with the Slope Percentage, Smoothness Index and Weather Forecast.
+	* The First Page Provides you with an Image of Slope Surface characteristics.
+	* The second page gives a plot defining the Surface Disturbances.
+	
 
 ## Authors
 
