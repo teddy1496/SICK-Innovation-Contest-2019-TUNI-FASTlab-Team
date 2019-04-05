@@ -17,7 +17,7 @@ ROS-Kinetic
 Python 2.7
 Pip
 Yarn
-Chrome Version 72+
+Chrome Version 72+ / Firefox Version 65+
 ```
 
 ### Installing
@@ -44,7 +44,7 @@ yarn install ion-range-slider
 ```
 * This can also be installed using npm or bower, using same command by replacing yarn with one of the respective packages.
 
-We also need a special numpy library by ros called "ros-numpy" that is being used for the mathematical computations on 
+We also need a special numpy library by ros called **"ros-numpy"** that is being used for the mathematical computations on 
 the data recieved from the sensor. To install this package please visit the link below, or click: [ros-numpy](http://wiki.ros.org/ros_numpy)
 ```
 http://wiki.ros.org/ros_numpy
