@@ -1,5 +1,5 @@
 # SICK Innovation Contest 2019 - TUNI FASTlab Team
-#RINNETUTKA
+# RINNETUTKA
 
 Application developed for the SICK Innovation Contest 2019 at Tamper University, Finaland.
 
@@ -29,7 +29,7 @@ To install them open a command window and run:
 ```
 pip install -r requirements.txt
 ```
-*If the system asks for admin priveledges run the below code with sudo. Example "sudo pip install numpy".
+* If the system asks for admin priveledges run the below code with sudo. Example "sudo pip install numpy".
 
 For Slider bar support on browser we must install Ion range Slider.
 To get this we must initially install yarn. Install yarn by clicking [Yarn](https://yarnpkg.com/lang/en/docs/install/#debian-stable) or following instructions on the link below:
@@ -42,7 +42,7 @@ After installing yarn Install ion-range-slider using the following command:
 ```
 yarn install ion-range-slider
 ```
-*This can also be installed using npm or bower, using same command by replacing yarn with one of the respective packages.
+* This can also be installed using npm or bower, using same command by replacing yarn with one of the respective packages.
 
 We also need a special numpy library by ros called "ros-numpy" that is being used for the mathematical computations on 
 the data recieved from the sensor. To install this package please visit the link below, or click: [ros-numpy](http://wiki.ros.org/ros_numpy)
