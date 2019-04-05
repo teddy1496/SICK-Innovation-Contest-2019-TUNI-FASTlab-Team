@@ -55,10 +55,34 @@ the data recieved from the sensor. To install this package please visit the link
 http://wiki.ros.org/ros_numpy
 ```
 
+* To set up the sensor and install the required drivers for the sensor to work on Ubuntu and ROS follow the instructions on 
+the [SICKAG GIT Repository](https://github.com/SICKAG/sick_scan) for this Sensor.
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+* The IP Configuration of the sensor can be done by following [ipconfig.md](https://github.com/SICKAG/sick_scan/blob/master/doc/ipconfig/ipconfig.md) on the [SICKAG GIT Repository](https://github.com/SICKAG/sick_scan).
+
+
+* Launch Transform file
+```
+	 roslaunch sensor_transform.launch
+```
+
+* To start the scanner with a specific IP address
+```
+	roslaunch sick_scan sick_mrs_6xxx.launch hostname:=<ip-address>
+```
+
+* To start the server
+```
+	 python server_BE.py
+  ```
+
+* Open the web-browser 
+ ``
+  localhost
+```
+ 
 
 
  
@@ -66,10 +90,10 @@ Add additional notes about how to deploy this on a live system
 ## Authors
 
 * **Ronal Bejarano** Email id: ronal.bejarano@tuni.fi 
-  **Dharmendra Sharma** Email id: dharmendra.sharma@tuni.fi
-  **Nicolas Trimborn** Email id: nicolas.trimborn@tuni.fi
-  **Ishira Dewundara** Email id: ishira.dewundaraliyanage@tuni.fi
-  **Tarun Devalla** Email id: tarun.devalla@tuni.fi
+* **Dharmendra Sharma** Email id: dharmendra.sharma@tuni.fi
+* **Nicolas Trimborn** Email id: nicolas.trimborn@tuni.fi
+* **Ishira Dewundara** Email id: ishira.dewundaraliyanage@tuni.fi
+* **Tarun Devalla** Email id: tarun.devalla@tuni.fi
 
 ## Acknowledgments
 
