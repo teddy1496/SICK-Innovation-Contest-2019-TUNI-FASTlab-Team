@@ -103,9 +103,3 @@ The Web Interface has 2 different pages, both pages provides you with the Slope 
 * **Nicolas Trimborn** Email id: nicolas.trimborn@tuni.fi
 * **Ishira Dewundara** Email id: ishira.dewundaraliyanage@tuni.fi
 * **Tarun Devalla** Email id: tarun.devalla@tuni.fi
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
