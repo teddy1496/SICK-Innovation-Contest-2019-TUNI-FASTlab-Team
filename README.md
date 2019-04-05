@@ -24,15 +24,20 @@ Chrome Version 72+ / Firefox Version 65+
 
 A step by step procedure to installing the dependencies required for this program
 
-List of modules required for the program to execute is listed in the [requirements.txt](https://github.com/teddy1496/SICK-Innovation-Contest-2019-TUNI-FASTlab-Team/blob/master/Server/requirements.txt) file. 
+List of modules required for the program to execute is listed in the [requirements.txt](https://github.com/teddy1496/SICK-Innovation-Contest-2019-TUNI-FASTlab-Team/blob/master/requirements.txt) file. 
 To install them open a command window and run:
 ```
 pip install -r requirements.txt
 ```
 * If the system asks for admin priveledges run the below code with sudo. Example "sudo pip install numpy".
 
+We require the matplotlib version-2.1.1, You can install this by following the link to the [Matplot Lib 2.1.1](https://github.com/teddy1496/SICK-Innovation-Contest-2019-TUNI-FASTlab-Team/blob/master/requirements.txt) installation instructions.
+```
+https://github.com/teddy1496/SICK-Innovation-Contest-2019-TUNI-FASTlab-Team/blob/master/requirements.txt
+```
+
 For Slider bar support on browser we must install Ion range Slider.
-To get this we must initially install yarn. Install yarn by clicking [Yarn](https://yarnpkg.com/lang/en/docs/install/#debian-stable) or following instructions on the link below:
+To get this we must initially install yarn. Install [yarn](https://yarnpkg.com/lang/en/docs/install/#debian-stable) by following instructions on the link below:
 
 ```https://yarnpkg.com/lang/en/docs/install/#debian-stable
 https://yarnpkg.com/lang/en/docs/install/#debian-stable
@@ -40,7 +45,7 @@ https://yarnpkg.com/lang/en/docs/install/#debian-stable
 After installing yarn Install ion-range-slider using the following command:
 
 ```
-yarn install ion-range-slider
+yarn add ion-rangeslider
 ```
 * This can also be installed using npm or bower, using same command by replacing yarn with one of the respective packages.
 
