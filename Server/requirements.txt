@@ -6,4 +6,3 @@ numpy
 scipy
 mpl_toolkits
 matplotlib
-time
