@@ -1,8 +1,4 @@
 pandas
 flask
-pylab
-thread
 numpy
 scipy
-mpl_toolkits
-matplotlib
