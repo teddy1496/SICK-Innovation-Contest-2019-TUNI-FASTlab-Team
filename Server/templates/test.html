@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rinne-Tutka</title>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+  <script src="http://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <!--Plugin CSS file with desired skin-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.0/css/ion.rangeSlider.min.css"/>
+  <!--jQuery-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--Plugin JavaScript file-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.0/js/ion.rangeSlider.min.js"></script>
+  <link rel="shortcut icon" href="https://s3.amazonaws.com/django-blog/ico/favicon_v2.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+          * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial;
+            padding: 10px;
+            background: #f1f1f1;
+        }
+        .layer-slider {
+            position: relative;
+            width: 800px;
+            margin: 0 auto 20px;
+            height: 35px;
+            text-align: center;
+        }
+        .layer-slider input {
+            pointer-events: none;
+            position: absolute;
+            left: 0;
+            top: 15px;
+            width: 100%;
+            outline: none;
+            height: 18px;
+            margin: 0;
+            padding: 0;
+            border-radius: 8px;
+        }
+        .layer-slider input::-webkit-slider-thumb {
+            pointer-events: all;
+            position: relative;
+            z-index: 1;
+            outline: 0;
+            -webkit-appearance: none;
+            height: 24px;
+            width: 24px;
+            border-radius: 12px;
+            background-color: white;
+            border: 2px solid black;
+        }
+        .points-slider {
+            position: relative;
+            width: 800px;
+            margin: 0 auto 20px;
+            height: 35px;
+            text-align: center;
+        }
+        .points-slider input {
+            pointer-events: none;
+            position: absolute;
+            left: 0;
+            top: 15px;
+            width: 100%;
+            outline: none;
+            height: 18px;
+            margin: 0;
+            padding: 0;
+            border-radius: 8px;
+        }
+        .points-slider input::-webkit-slider-thumb {
+            pointer-events: all;
+            position: relative;
+            z-index: 1;
+            outline: 0;
+            -webkit-appearance: none;
+            height: 24px;
+            width: 24px;
+            border-radius: 12px;
+            background-color: white;
+            border: 2px solid black;
+        }
+
+        /* Header/Blog Title */
+        .header {
+            padding: 1px;
+            height:100px;
+            text-align: center;
+            background: #4c3f90;
+        }
+
+        .header h1 {
+            display: inline-block;
+            float: center
+            font-size: 20px;
+        }
+        .header img{
+            display: inline-block;
+            float:right
+        }
+        .topnav {
+          overflow: hidden;
+          width: 100%;
+          background-color: #333;
+        }
+
+        .leftcolumn {
+            float: left;
+            width: 75%;
+        }
+
+        /* Right column */
+        .rightcolumn {
+            float: right;
+            width: 25%;
+            background-color: #f1f1f1;
+            padding-left: 20px;
+        }
+
+        /* Fake image */
+        .fakeimg {
+            background-color: #aaa;
+            width: 100%;
+            padding: 20px;
+        }
+
+        /* Add a card effect for articles */
+        .card {
+            background-color: white;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Footer */
+        .footer {
+            height: 50px;
+            text-align: center;
+            background: #4c3f90;
+        }
+        .footer h5 {
+            display: inline-block;
+            float: left;
+            font-size: 12px;
+        }
+        .footer h6 {
+            display: inline-block;
+            float: right;
+            font-size: 12px;
+        }
+        #circle1 {
+        	border-radius: 50%;
+        	width: 200px;
+        	height: 200px;
+          background-color: #f1f1f1;
+          padding-left: 6px;
+          padding-top:90px;
+        	/* width and height can be anything, as long as they're equal */
+        }
+
+        #circle2 {
+        	border-radius: 50%;
+        	width: 200px;
+        	height: 200px;
+          background-color: #f1f1f1;
+          padding-left: 6px;
+          padding-top:90px;
+        	/* width and height can be anything, as long as they're equal */
+        }
+        #mySidenav a {
+            position: absolute;
+            left: -80px;
+            transition: 0.1s;
+            padding: 15px;
+            width: 140px;
+            text-decoration: none;
+            font-size: 20px;
+            color: white;
+            border-radius: 0 5px 5px 0;
+        }
+
+        #mySidenav a:hover {
+            left: 0;
+        }
+
+        #Groomer {
+            top: 400px;
+            background-color: #4CAF50;
+        }
+
+        #Skiier {
+            top: 460px;
+            background-color: #2196F3;
+        }
+        /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 800px) {
+            .leftcolumn, .rightcolumn {
+                width: 100%;
+                padding: 0;
+            }
+        }
+
+        /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+        @media screen and (max-width: 400px) {
+            .topnav a {
+                float: none;
+                width: 100%;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="mySidenav" class="sidenav">
+      <a href="/test" id="Groomer">Maintenance</a>
+      <a href="/skiier" id="Skiier">Skiier</a>
+    </div>
+    <div class="header">
+            <h1 style="color:white;">RinneTutka</h1>
+            <img src="../static/tuni.png" alt="logo" style="width:100px;height:100px;" />
+    </div>
+    <div class="topnav">
+        <a class="weatherwidget-io" href="https://forecast7.com/en/61d5023d76/tampere/" data-label_1="TAMPERE" data-label_2="WEATHER" data-theme="original" >TAMPERE WEATHER</a>
+        <script>
+        !function(d,s,id){
+            var js,fjs=d.getElementsByTagName(s)[0];
+            if(!d.getElementById(id)){
+                    js=d.createElement(s);
+                    js.id=id;
+                    js.src='https://weatherwidget.io/js/widget.min.js';
+                    fjs.parentNode.insertBefore(js,fjs);
+                }
+            }
+        (document,'script','weatherwidget-io-js');
+        </script>
+    </div>
+
+    <div class="row">
+      <div class="leftcolumn">
+        <div class="card">
+          <div align="center" >
+              <h2>Slope Characteristics SurfaceMap</h2>
+              <img src ="../static/slope.png" id="slope_img" alt="slope_img" style="width:900px;height:448px;" />
+          </div>
+             <div align = "bottom">
+                   <input type="text" class="js-range-slider_points" name="point_range" value="" />
+                   <input type="text" class="js-range-slider_layers" name="layer_range" value="" />
+             </div>
+         </div>
+        </div>
+    <div class="rightcolumn">
+      <div class="card">
+        <div align="center" >
+          <h2> Slope Percentage </h2>
+          <div id="slope_angle">
+             <div id="circle1" width="300" height="200">Slope</div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+          <div align="center">
+              <h3>Smoothness Characteristics</h3>
+              <div id="smoothness_value">
+                  <div id="circle2" width="300" height="300">smoothness_char</div>
+              </div>
+          </div>
+       </div>
+     </div>
+    </div>
+    <div class="footer">
+            <h6 style="color:white;"> TUNI-FASTlab Team</h6>
+            <h5 style="color:white;">SICK Innovation Contest 2019</h5>
+    </div>
+
+    <script>
+        $(".js-range-slider_points").ionRangeSlider({
+          type: "double",
+          min: 0,
+          max: 924,
+          from: 0,
+          to: 924,
+          grid: true,
+          grid_num: 20,
+          onFinish: function(data){
+              var value_points = []
+              value_points.push(data.from)
+              value_points.push(data.to)
+              console.log(value_points)
+              $.getJSON('/range_points', {
+                  "points-from":data.from,"points-to":data.to
+          });
+      },
+      onStart: function (data) {
+          var value_points = []
+          value_points.push(data.from)
+          value_points.push(data.to)
+          console.log(value_points)
+          $.getJSON('/range_points', {
+              "points-from":data.from,"points-to":data.to
+      });
+  }
+});
+
+        $(".js-range-slider_layers").ionRangeSlider({
+          type: "double",
+          min: 0,
+          max: 24,
+          from: 0,
+          to: 24,
+          grid: true,
+          grid_num: 2,
+          onFinish: function(data){
+              var value_layers = []
+              value_layers.push(data.from)
+              value_layers.push(data.to)
+              val = value_layers
+              console.log(val)
+              $.getJSON('/range_layers', {
+                  "layers-from":data.from,"layers-to":data.to
+          });
+      },
+        onStart: function (data) {
+            var value_layers = []
+            value_layers.push(data.from)
+            value_layers.push(data.to)
+            val = value_layers
+            console.log(val)
+            $.getJSON('/range_layers', {
+                "layers-from":data.from,"layers-to":data.to
+        });
+      }
+  });
+    </script>
+    <script>
+          window.setInterval(function(){
+              document.getElementById('slope_img').src = "../static/slope.png?rnd="+Math.random();
+              get_slope_val()
+              get_smoothness()
+          }, 2000);
+
+          function get_smoothness(){
+            $.get( "/smoothness_val", function(data) {
+                dataObject_smoothness_value = JSON.parse(data);
+                htmlObj_smooth = dispSmooth(dataObject_smoothness_value)
+                console.log(dataObject_smoothness_value)
+                //$("#log").html(htmlObj_smooth);
+            });
+            }
+          function get_slope_val(){
+              $.get("/slope_val", function(data) {
+                  dataObj_slope_val = JSON.parse(data);
+                  //alert( "Load was performed." );
+                  htmlObj_slope=dispSlope(dataObj_slope_val);
+                  console.log(dataObj_slope_val)
+                  //$("#log").html(htmlObj_slope);
+              });
+          }
+
+
+          function draw1(color, my_text){
+            var circ = document.getElementById('circle2');
+            circ.style.backgroundColor = color;
+            circ.innerText = my_text;
+            circ.style.color= "white"
+
+            }
+            function draw2(color, my_text){
+              var rect = document.getElementById('circle1');
+              rect.style.backgroundColor = color;
+              rect.innerText = my_text;
+              rect.style.color= "white"
+              }
+
+          function dispSmooth(dataObj_slope_smoothness){
+            var smooth = parseFloat(dataObj_slope_smoothness["Smoothness"]);
+            console.log(smooth)
+            if(smooth >= 0.25){
+              draw1('orange', "Bumpy")
+            }
+            if(smooth <= 0.19){
+              draw1('red', "Holey")
+            }
+            if(smooth >= 0.2 && smooth <=0.24){
+              draw1('green', "Good")
+            }
+        }
+
+        function dispSlope(dataObj_slope_value){
+            console.log(dataObj_slope_value)
+            console.log(dataObj_slope_value["Slope"])
+          var slope_char = parseFloat(dataObj_slope_value["Slope"]);
+          slope_char = slope_char.toFixed(2)
+          if(slope_char <= 20){
+            draw2('green', "Beginner\n"+slope_char+"%")
+          }
+          if(slope_char >= 21 && slope_char <= 30){
+            draw2('blue', "Medium\n"+slope_char+"%")
+          }
+          if(slope_char >= 31 && slope_char <=45){
+            draw2('red', "Advance\n"+slope_char+"%")
+          }
+          if(slope_char >= 46){
+            draw2('black', "Expert\n"+slope_char+"%")
+          }
+        }
+
+    </script>
+
+</body>
+
+
+</html>

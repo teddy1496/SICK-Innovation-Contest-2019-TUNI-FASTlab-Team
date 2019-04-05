@@ -1,0 +1,19 @@
+Ubuntu-16
+ROS-Kinetic
+pandas
+flask
+requests
+flask-cors
+rospy
+ros-numpy
+mpl_toolkits
+matplotlib
+scipy
+numpy
+json
+
+***For Range Sliders***
+Yarn
+Using Yarn install ion-range-sliders
+***Refer http://ionden.com/a/plugins/ion.rangeSlider/start.html ***
+
