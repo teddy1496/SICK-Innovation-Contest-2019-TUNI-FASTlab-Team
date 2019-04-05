@@ -35,7 +35,7 @@ For Slider bar support on browser we must install Ion range Slider.
 To get this we must initially install yarn. Follow the instructions on the link below to install Yarn
 
 ```
-https://yarnpkg.com/lang/en/docs/install/#debian-stable
+[Yarn Install](https://yarnpkg.com/lang/en/docs/install/#debian-stable)
 ```
 After installing yarn Install ion-range-slider using the following command:
 
@@ -47,7 +47,7 @@ yarn install ion-range-slider
 We also need a special numpy library by ros called "ros-numpy" that is being used for the mathematical computations on 
 the data recieved from the sensor. To install this package please visit:
 ```
-http://wiki.ros.org/ros_numpy
+[ros-numpy Download](http://wiki.ros.org/ros_numpy)
 ```
 
 
