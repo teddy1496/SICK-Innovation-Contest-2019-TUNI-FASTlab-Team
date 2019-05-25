@@ -25,7 +25,7 @@ Chrome Version 72+ / Firefox Version 65+
 A step by step procedure to installing the dependencies required for this program
 
 List of modules required for the program to execute is listed in the [requirements.txt](https://github.com/teddy1496/SICK-Innovation-Contest-2019-TUNI-FASTlab-Team/blob/master/requirements.txt) file. 
-To install them open a command window and run:
+To install them open a command window form the folder where you requirements.txt have and run:
 ```
 pip install -r requirements.txt
 ```
@@ -57,13 +57,17 @@ http://wiki.ros.org/ros_numpy
 
 * To set up the sensor and install the required drivers for the sensor to work on Ubuntu and ROS follow the instructions on 
 the [SICKAG GIT Repository](https://github.com/SICKAG/sick_scan) for this Sensor.
+* After Completion of installation, source the setup.bash file from the devel folder of the Workspace created. You can also add this to the bash as
+```
+source <location-of-workspace>/<name-of-workspace>/devel/setup.bash
+```
 
 ## Deployment
 
 * The IP Configuration of the sensor can be done by following [ipconfig.md](https://github.com/SICKAG/sick_scan/blob/master/doc/ipconfig/ipconfig.md) on the [SICKAG GIT Repository](https://github.com/SICKAG/sick_scan).
 
 
-* Launch Transform file
+* Launch Transform file from the folder where the "sensor_transform.launch" exists.
 ```
 roslaunch sensor_transform.launch
 ```
